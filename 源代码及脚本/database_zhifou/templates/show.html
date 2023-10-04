@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>知否</title>
+    <style>
+        body{
+            margin: auto auto;
+            padding: 0;
+            border: 0;
+            background-color: rgb(88, 210, 234);
+        }
+        #background{
+            margin: auto auto;
+            padding: 0;
+            border: 0;
+            vertical-align: baseline;
+        }
+        #dl{
+            width:400px;
+            height:350px;
+            background-image: linear-gradient(120deg, rgb(27, 184, 27) 0%, rgb(206, 226, 223) 100%);
+            margin: auto auto;
+            top:100px;
+            right:300px;
+            
+            border-radius: 10%;
+            box-shadow:10px 10px 1px rgba(97, 91, 100, 0.5);
+        
+        }
+        .text{
+            color:white;
+            display: flex;
+            justify-content: center;
+            font-style: inherit;
+        }
+        .input{
+            height:10%;
+            width:60%;
+        }
+        .but{
+            display: flex;
+            justify-content: center;
+        }
+        .input-box{
+            width:800px;
+
+        }
+    </style>
+</head>
+<body>
+    <form method="post">
+        <div id="backgroung" >
+            <div id="dl">
+                <div class="text"><h1>用户信息</h1></div>
+                <div class="input-box">
+                    <table>
+                        {% for users in users_list %}
+                            <tr>
+                                <td>用户ID：{{users.用户ID}}, 用户名: {{users.用户名}}, 用户介绍：{{users.用户介绍}}</td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+    </form>>
+
+</body>
+</html>

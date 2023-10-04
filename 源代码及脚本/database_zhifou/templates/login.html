@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>知否</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            border: 0;
+            background-color: rgb(88, 210, 234);
+        }
+        #background{
+            margin: 0;
+            padding: 0;
+            border: 0;
+            vertical-align: baseline;
+            background-attachment: fixed;
+            background-size: cover;
+            /* background-image:url(""); */
+            
+        }
+        #index{
+            width:250px;
+            height:350px;
+            background-image: linear-gradient(120deg, #93f828 0%, #fce5ff 100%);
+            position: absolute;
+            top:0;
+            bottom:0;
+            left:0;
+            right: 0;
+            margin:auto;
+            border-radius: 10%;
+            box-shadow:10px 10px 1px rgba(97, 91, 100, 0.5);
+        }
+        .text{
+            padding-top: 20px;
+            color:white;
+            display: flex;
+            justify-content: center;
+            font-size: large;
+
+        }
+        .input{
+            padding-top: 50px;
+            height:10%;
+            width:60%;
+            margin: auto;
+        }
+        .bu{
+            padding-top: 100px;
+            display: inline-block;
+            padding-left: 30%;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div id="background">
+        <div id="index">
+            <div class="text">欢迎来到，知否</div>
+            <br>
+            <form action="" method="post">
+                <div class="input">
+                    用户名输入：<input class="userinput"  type="text" name="username">
+                    <br>
+                    密码输入：<input class="passwordinput"  type="password" name="password">
+                    <br>
+                    <!-- {{data}} -->
+                    <!-- <input type=" submit" name="登入"> -->
+                </div>
+                <div class="bu">
+                    <!-- 需要改进 -->
+                    <a href="index.html" target="_blank"><button>登入</button></a>
+                    <a href="index.html" target="_blank"><button>注册</button></a>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+
+</body>
+</html>

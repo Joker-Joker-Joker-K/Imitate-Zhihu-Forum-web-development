@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.bootcss.com/bulma/0.6.1/css/bulma.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/app.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 主导航栏 -->
+    <div class="navbar has-shadow">
+    <div class="container">
+        <div class="navbar-menu">
+        <div class="navbar-start">
+            <a href="/allQuestions" class="navbar-item">首页</a>
+            <a href="/myQuestions" class="navbar-item">我的</a>
+            <a href="/index" class="navbar-item">Master</a>
+            <div class="navbar-item">
+            <div class="field is-grouped">
+                <div class="control has-icons-right">
+                <input type="text" class="input " id="search_term" style="width: 20rem;" placeholder="搜索你感兴趣的内容...">
+                <span class="icon is-right">
+                <i class="fa fa-search"></i>
+                </span>
+                </div>
+                <div class="control">
+                <input type="submit" class="button is-info" id="search" value="搜索">
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="navbar-end">
+            <!-- 消息 -->
+            <a href="#" class="navbar-item">
+            <i class="fa fa-15 fa-bell"></i>
+            </a>
+            <!-- 私信 -->
+            <a href="#" class="navbar-item">
+            <i class="fa fa-15 fa-comments"></i>
+            </a>
+            <!-- 个人简介 -->
+            <a href="/myInformation" class="navbar-item">
+            <!-- <img src="" alt="用户头像"> -->
+            <i class="fa fa-15 fa-solid fa-user"></i>
+            </a>
+        </div>
+        </div>
+    </div>
+    </div>
+    <div class="navbar has-shadow" style="position: relative; top: 1px;">
+        <div class="container">
+            <div class="navbar-tabs">
+                <a href="/allQuestions" class="navbar-item is-tab ">问题</a>
+                <a href="/allArticals" class="navbar-item is-tab is-active">文章</a>
+                <a href="#" class="navbar-item is-tab">其它</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="container">
+            <div class="tile">
+                <div class="tile is-vertical is-parent is-8">
+                    <div class="box">
+                        <div class="media">
+                            <div class="media-content">
+                            <div class="content">
+                                <p><strong>文章</strong></p>
+                                <p><strong>Master:</strong>打开你的浏览器</p>
+                                <p>
+                                <a class="tag is-medium is-lightblue has-addons">
+                                    <i class="fa fa-caret-up"></i>
+                                    <span class="icon is-medium">0</span>
+                                </a>
+                                <a class="tag is-medium is-lightblue">
+                                    <i class="fa fa-caret-down"></i>
+                                </a>
+                                <a href="#" class="ml-10">
+                                    <i class="fa fa-comment"></i>
+                                    <span>0条回答</span>
+                                </a>
+                                </p>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <div class="media-content">
+                            <div class="content">
+                                <p><strong>文章</strong></p>
+                                <p><strong>Master:</strong>问知乎</p>
+                                <p>
+                                <a class="tag is-medium is-lightblue has-addons">
+                                    <i class="fa fa-caret-up"></i>
+                                    <span class="icon is-medium">0</span>
+                                </a>
+                                <a class="tag is-medium is-lightblue">
+                                    <i class="fa fa-caret-down"></i>
+                                </a>
+                                </p>
+                            </div>
+                            </div>
+                        </div>
+                        {%for artical in articals%}
+                        <div class="media show_arti_detail">
+                            <div class="media-content">
+                            <div class="content ">
+                                <!-- 把删除文章功能隐藏 -->
+                                <p><strong >{{artical.Articals.文章名称}}</strong><span class="tag is-gray delArtical" style="display: none;" data-arti_id={{artical.Articals.文章ID}}>-</span></p>
+                                
+                                <p><strong>{{artical.Users.用户名}}:</strong></p>
+                                
+                                <p>
+                                    <a class="tag is-medium is-lightblue has-addons">
+                                        <i class="fa fa-caret-up"></i>
+                                        <span class="icon is-medium u_yes_number" data-arti_id={{artical.Articals.文章ID}}>{{artical.Articals.赞同数}}</span>
+                                    </a>
+                                    <a class="tag is-medium is-lightblue d_yes_number" data-arti_id={{artical.Articals.文章ID}}>
+                                        <i class="fa fa-caret-down"></i>
+                                    </a>
+                                    {{artical.Articals.创作时间}}
+                                </a>
+                                </p>
+                            </div>
+                            </div>
+                        </div>
+                        <!-- 文章详细内容 -->
+                        <div class="media arti_detail" style="display:none;">
+                            <div class="media-content">
+                            <div class="content ">
+                                <p>
+                                    &emsp;&emsp;{{artical.Articals.文章内容}}
+                                </p>
+                            </div>
+                            </div>
+                            <br>
+                        </div>
+                        {%endfor%}
+                    </div>
+                    
+                </div>
+                <!-- 个人信息 -->
+                <div class="tile is-vertical is-parent">
+                    <div class="card">
+                        <div class="card-header">
+                            <p class="card-header-title"><button class="button is-info" id="addArtical">创作文章</button></p>
+                        </div>
+                        <div class="card-content">
+                            <input type="text" class="input" id="addArtical_tittle" style="width: 10rem;height: 2rem;" placeholder="起一个漂亮的标题...">
+                            <!-- <HR align=center width=300 color=#987cb9 SIZE=1> -->
+                            <p>★,,♫◦★,,♫◦★,,♫◦★,,♫◦★,,♫◦★,,♫◦★,,♫◦★,,♫◦</p>
+                            <br>
+                            <!-- 这个输入框不会换行 -->
+                            <input type="text" class="input" id="addArtical_text" style="width: 20rem;height: 5rem;" placeholder="让思绪放肆飞扬吧...">
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <p class="card-header-title">{{user[0].用户名}}</p>
+                        </div>
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-left">
+                                    <figure class="image is-64x64">
+                                        <!-- 用户头像 -->
+                                        <img src="#" alt="">
+                                    </figure>
+                                </div>
+                                <div class="media-content">
+                                    <p>
+                                        <!-- 空格 -->
+                                        <strong>&emsp;&emsp;{{user[0].用户介绍}}</strong>
+                                    </p>
+                                    <p>
+                                        0篇文章 | 0次提问 | 0条回答 
+                                        <span class="tag is-gray">0赞</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <p class="card-header-title">详细信息</p>
+                        </div>
+                        <div class="card-content">
+                            <ul class="lh-20">
+                                <li>性别：{{user[0].性别}}</li>
+                                <li>学校：{{user[0].学校}}</li>
+                                <li>院系专业：{{user[0].院系专业}}</li>
+                                <li>学号：{{user[0].学号}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<!-- #引入Jquery -->
+<script src="../static/jquery-1.12.4.min.js"></script>
+<script>
+
+    // 开始写 jQuery 代码...
+    $(function(){
+        // 显示/隐藏文章内容
+        $(".show_arti_detail").click(function(){
+            $(".arti_detail").toggle();
+        });
+        $("#addArtical").click(function(){
+            alert("创作文章");
+            var data = {
+                    "addArtical_tittle":$("#addArtical_tittle").val(),
+                    "addArtical_text":$("#addArtical_text").val()
+                }
+            $.ajax({
+                url: "/addArtical",
+                type: "post",
+                data:data,
+                success: function (response) {
+                    console.log(response);
+                    // alert(data);
+                    window.location.reload();
+                   // 刷新
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            })
+            
+        });
+        $(".delArtical").dblclick(function(){
+            alert("删除文章");
+            var data = {
+                "arti_id":$(this).data('arti_id')
+                }
+            $.ajax({
+                url: "/delArtical",
+                type: "post",
+                data:data,
+                success: function (response) {
+                    console.log(response);
+                    // alert(data);
+                    window.location.reload();
+                   // 刷新
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            })
+            
+        });
+        
+        $(".u_yes_number").click(function(){
+            alert("同意！");
+            var data = {
+                "arti_id":$(this).data('arti_id')
+                }
+            
+        });
+        $(".d_yes_number").click(function(){
+            alert("反对！");
+            var data = {
+                "arti_id":$(this).data('arti_id')
+                }
+            
+        });
+
+        $("#search").click(function(){
+            alert("跳转到全局搜索");
+            var search_term = $("#search_term").val();
+            var data = {
+                    "search_term":search_term
+                }
+                
+            
+            // 锁定当前标签
+            $.ajax({
+                url: "/showSearch/"+search_term,
+                type: "get",
+                success: function (response) {
+                    console.log(response);
+                    // alert(data);
+                    window.location.replace('/showSearch/'+search_term); 
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            })
+        });
+    });
+    
+
+</script>
+
+
+
+
+
+
+
+
+

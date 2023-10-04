@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.bootcss.com/bulma/0.6.1/css/bulma.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./app.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 主导航栏 -->
+    <div class="navbar has-shadow">
+    <div class="container">
+        <div class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbar-item">首页</a>
+            <a class="navbar-item">我的</a>
+            <a class="navbar-item">Master</a>
+            <div class="navbar-item">
+            <div class="field is-grouped">
+                <div class="control has-icons-right">
+                <input type="text" class="input" style="width: 20rem;" placeholder="搜索你感兴趣的内容...">
+                <span class="icon is-right">
+                <i class="fa fa-search"></i>
+                </span>
+                </div>
+                <div class="control">
+                <input type="submit" class="button is-info" value="搜索">
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="navbar-end">
+            <!-- 消息 -->
+            <a href="#" class="navbar-item">
+            <i class="fa fa-15 fa-bell"></i>
+            </a>
+            <!-- 私信 -->
+            <a href="#" class="navbar-item">
+            <i class="fa fa-15 fa-comments"></i>
+            </a>
+            <!-- 个人简介 -->
+            <a href="#" class="navbar-item">
+            <!-- <img src="" alt="用户头像"> -->
+            <i class="fa fa-15 fa-solid fa-user"></i>
+            </a>
+        </div>
+        </div>
+    </div>
+    </div>
+    <div class="navbar has-shadow" style="position: relative; top: 1px;">
+        <div class="container">
+            <div class="navbar-tabs">
+                <a href="#" class="navbar-item is-tab is-active">文章</a>
+                <a href="#" class="navbar-item is-tab">问题</a>
+                <a href="#" class="navbar-item is-tab">其它</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="container">
+            <div class="tile">
+                <div class="tile is-vertical is-parent is-8">
+                    <!-- <div class="box">
+                        <div class="media">
+                            <div class="media-left">
+                            <figure class="image is-64x64">
+                                <img src="https://bulma.io/images/placeholders/128x128.png" alt="">
+                            </figure>
+                            </div>
+                            <div class="media-content lh-20">
+                            <p><strong>协程</strong> <span class="tag is-lightblue">话题</span></p>
+                            <p>
+                                380关注 | 68 问题 | 69精华内容
+                                <button class="button is-info is-pulled-right">关注话题</button>
+                            </p>
+                            <p><a href="#">查看更多 [话题] 搜索结果</a></p>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="box">
+                        <div class="media">
+                            <div class="media-content">
+                            <div class="content">
+                                <p><strong>文章</strong></p>
+                                <p><strong>Master:</strong>打开你的浏览器</p>
+                                <p>
+                                <a class="tag is-medium is-lightblue has-addons">
+                                    <i class="fa fa-caret-up"></i>
+                                    <span class="icon is-medium">0</span>
+                                </a>
+                                <a class="tag is-medium is-lightblue">
+                                    <i class="fa fa-caret-down"></i>
+                                </a>
+                                <a href="#" class="ml-10">
+                                    <i class="fa fa-comment"></i>
+                                    <span>0条回答</span>
+                                </a>
+                                </p>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <div class="media-content">
+                            <div class="content">
+                                <p><strong>文章</strong></p>
+                                <p><strong>Master:</strong>问知乎</p>
+                                <p>
+                                <a class="tag is-medium is-lightblue has-addons">
+                                    <i class="fa fa-caret-up"></i>
+                                    <span class="icon is-medium">0</span>
+                                </a>
+                                <a class="tag is-medium is-lightblue">
+                                    <i class="fa fa-caret-down"></i>
+                                </a>
+                                </p>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <!-- 个人信息 -->
+                <div class="tile is-vertical is-parent">
+                    <div class="card">
+                        <div class="card-header">
+                            <p class="card-header-title">用户名</p>
+                        </div>
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-left">
+                                    <figure class="image is-64x64">
+                                        <!-- 用户头像 -->
+                                        <img src="#" alt="">
+                                    </figure>
+                                </div>
+                                <div class="media-content">
+                                    <p>
+                                        <!-- 空格 -->
+                                        <strong>&emsp;&emsp;用户介绍</strong>
+                                    </p>
+                                    <p>
+                                        0篇文章 | 0次提问 | 0条回答 
+                                        <span class="tag is-gray">0赞</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <p class="card-header-title">详细信息</p>
+                        </div>
+                        <div class="card-content">
+                            <ul class="lh-20">
+                                <li>性别：</li>
+                                <li>学校：</li>
+                                <li>院系专业：</li>
+                                <li>学号：</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+

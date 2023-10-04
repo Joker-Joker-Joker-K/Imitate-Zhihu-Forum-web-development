@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>知否</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            border: 0;
+            background-color: rgb(88, 210, 234);
+        }
+        #background{
+            margin: 0;
+            padding: 0;
+            border: 0;
+            vertical-align: baseline;
+            background-attachment: fixed;
+            background-size: cover;
+            /* background-image:url(""); */
+            
+        }
+        #index{
+            width:250px;
+            height:350px;
+            background-image: linear-gradient(120deg, #93f828 0%, #fce5ff 100%);
+            position: absolute;
+            top:0;
+            bottom:0;
+            left:0;
+            right: 0;
+            margin:auto;
+            border-radius: 10%;
+            box-shadow:10px 10px 1px rgba(97, 91, 100, 0.5);
+        }
+        .text{
+            padding-top: 20px;
+            color:white;
+            display: flex;
+            justify-content: center;
+            font-size: large;
+
+        }
+        .input{
+            padding-top: 50px;
+            height:10%;
+            width:60%;
+            margin: auto;
+        }
+        .bu{
+            justify-content: center;
+            width:150px;
+            border-radius:10%;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="background">
+        <div id="index">
+            <div class="text">增加界面</div>
+            <br>
+            <form method="post" action="">
+                <div class="input">
+                    用户ID输入：<input class="userIDinput" name="用户ID" type="text" >
+                    <br>
+                    用户名：<input class="usernameinput"  name="用户名" type="text">
+                    <br>
+                    用户介绍：<input class="selfsayinput" name="用户介绍"  type="text">
+                    <br>
+                    <!-- 性别：<input class="sexinput" name="性别：" type="text">
+                    <br> -->
+                    <br>
+                    <br>
+                    <input class="bu" name="添加" type="submit">
+                </div>
+                <!-- <div class="bu">
+                    <button>添加</button>
+                </div> -->
+            </form>
+            
+        </div>
+    </div>
+
+</body>
+</html>

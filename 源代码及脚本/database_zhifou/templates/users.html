@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>知否</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            border: 0;
+            background-color: rgb(88, 210, 234);
+        }
+        #background{
+            margin: 0;
+            padding: 0;
+            border: 0;
+            vertical-align: baseline;
+            height:600px;
+            background-attachment: fixed;
+            background-size: cover;
+            /* background-image:url(""); */
+        }
+        #dl{
+            width:250px;
+            height:350px;
+            background-image: linear-gradient(120deg, #93f828 0%, #fce5ff 100%);
+            position: absolute;
+            top:0;
+            bottom:0;
+            left:0;
+            right: 0;
+            margin:auto;
+            border-radius: 10%;
+            box-shadow:10px 10px 1px rgba(97, 91, 100, 0.5);
+        }
+        .text{
+            color:white;
+            padding-top: 20px;
+            font-size: large;
+            display: flex;
+            justify-content: center;
+
+        }
+        .input{
+            height:10%;
+            width:60%;
+        }
+        .but{
+            display: flex;
+            justify-content: center;
+        }
+        .bu{
+            width:150px;
+            /* background-image: linear-gradient(120deg, #93f828 0%, #fce5ff 100%); */
+            border-radius:10%;
+        }
+        /* button:hover{
+            font-size:15px;
+            background-image: linear-gradient(120deg,rgb(209, 221, 243) 0%, #96e8e6 100%);
+        }
+        button:active{
+            background-image: linear-gradient(120deg,#bcffff 0%,  #caf7ec 100%);
+        } */
+    </style>
+</head>
+<body>
+    <div id="background" >
+            <div id="dl">
+                <div class="text">用户信息管理</div>
+                <br>
+                <form  action="insert">
+                    <div class="but">
+                        <input class="bu" type="submit" value="添加用户">
+                    </div>
+                </form>
+                
+                <br>
+                <form method="get" action="drop">
+                    <div class="but">
+                        <input class="bu" type="submit" value="删除用户">
+                        
+                    </div>
+                </form>
+                <br>
+                <form method="get" action="upgate">
+                    <div class="but">
+                        <input class="bu" type="submit" value="修改用户信息">
+                        
+                    </div>
+                </form>
+                <br>
+                <form method="get" action="select">
+                    <div class="but">
+                        <input class="bu" type="submit" value="查询用户信息">
+                        
+                    </div>
+                </form>
+                <br>
+            </div>
+    </div>
+</body>
+</html>
